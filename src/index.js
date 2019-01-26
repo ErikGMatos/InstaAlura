@@ -13,7 +13,7 @@ import { timeline } from './reducers/timeline';
 import { notificacao } from './reducers/header';
 
 
-//      import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 
 
 function verificaAutenticacao(nextState, replace) {
@@ -56,10 +56,10 @@ function verificaAutenticacao(nextState, replace) {
 
 const reducers = combineReducers({ timeline: timeline, notificacao: notificacao });
 const store = createStore(reducers, applyMiddleware(thunkMiddleware));
-const Context = React.createContext();
-debugger;
+
+
 ReactDOM.render(
-    <Context.Provider store={store}> 
+    <Provider store={store}> 
         <Router>
             <Switch>
                 <Route path="/" exact component={Login} />
@@ -67,7 +67,7 @@ ReactDOM.render(
                 <Route path="/logout" component={Logout} />
             </Switch>
         </Router>
-    </Context.Provider>
+    </Provider>
     ,document.getElementById('root')
 );
 

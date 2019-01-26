@@ -4,7 +4,7 @@ import Timeline from './componentes/Timeline';
 import './css/reset.css';
 import './css/timeline.css';
 import './css/login.css';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -21,8 +21,8 @@ class App extends Component {
     }
 }
 
-//App.contextType = {
-//    store: PropTypes.object.isRequired
-//}
+App.contextType = {
+    store: PropTypes.object.isRequired
+}
 
 export default App;
